@@ -14,7 +14,7 @@ function CardAtleta(props) {
       <Text>Número: {props.player_number}</Text>
       <Text>Gols: {props.player_goals}</Text>
       <Text>Time: {props.team_name}</Text>
-      <Image source={{ uri: props.player_image }} style={styles.cardImage} />
+      <Image source={{ uri: props.player_image }} style={styles.cardImage} onError={(error) => console.log('Erro de imagem:', error)} />
     </View>
   );
 }

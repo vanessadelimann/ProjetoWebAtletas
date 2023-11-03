@@ -64,7 +64,7 @@ const HomeScreen = () => {
   const [textoPesquisa, setTextoPesquisa] = useState('');
 
   const handleClick = () => {
-    fetch('https://apiv3.apifootball.com/?action=get_players&player_name=' + textoPesquisa + '&APIkey=2e3f80fc7771827f3d55297a701a0f6cef442b6ed7d184f66f1a4ced574461f7')
+    fetch('https://apiv3.apifootball.com/?action=get_players&player_name=' + textoPesquisa + '&APIkey=60914498e4cf13d11a2de4ffaecd267b3cc4a40588b7c8e00a70f46a93c3d8cd')
       .then((response) => response.json())
       .then((data) => setDadosDosAtletas(data))
       .catch((error) => console.error('Erro ao buscar dados da API:', error));
@@ -100,8 +100,8 @@ const HomeScreen = () => {
       />
     <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Painel Favoritos</Text>
       <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
-        {Array.isArray(atletasFavoritos) ? (
-          atletasFavoritos.map((atleta, index) => (
+        {Array.isArray(dadosDosAtletas) ? (
+          dadosDosAtletas.map((atleta, index) => (
             <CardAtleta
               key={index}
               player_name={atleta.player_name}
